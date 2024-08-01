@@ -24,7 +24,7 @@ COPY . .
 
 # Skaffold passes in debug-oriented compiler flags
 #ARG SKAFFOLD_GO_GCFLAGS
-RUN go build
+RUN go build -o /productcatalogservice .
 
 FROM alpine:3.18.0@sha256:02bb6f428431fbc2809c5d1b41eab5a68350194fb508869a33cb1af4444c9b11 AS without-grpc-health-probe-bin
 RUN apk add --no-cache ca-certificates
